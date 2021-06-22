@@ -1,12 +1,18 @@
 extends ../layout
 
 block content
-  h1 Login
   form(action="/login",method="post")        
         .form-group
-            label(for="email") Email
-            input#email(type="text", class="form-control", name="email" value="enter login ")
-        .form-group
-            label(for="password") Password
-            input#price(type="password", class="form-control", name="password", value="enter password")
+            #error
+                if error
+                    p.text-danger Error!!!
+  - var h1Classes = ['h3', 'mb-3', 'font-weight-normal']
+            h1(class=h1Classes) Please sign in
+
+            label( for="inputEmail" class="sr-only") Email address
+            input(type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus)
+
+            label(for="inputPassword" class="sr-only") Password
+            input(type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required)
+
         input(type="submit", class="btn btn-info" value="Login")
