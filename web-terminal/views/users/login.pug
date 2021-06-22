@@ -6,12 +6,12 @@ block content
             #error
                 if error
                     p.text-danger Error!!!
-  - var h1Classes = ['h3', 'mb-3', 'font-weight-normal']
+             - var h1Classes = ['h3', 'mb-3', 'font-weight-normal']
             h1(class=h1Classes) Please sign in
-
+            .form-group
             label( for="inputEmail" class="sr-only") Email address
             input(type="email" name="email"  class="form-control" placeholder="Email address" required autofocus)
-
+            .form-group
             label(for="inputPassword" class="sr-only") Password
             input(type="password" name="password"  class="form-control" placeholder="Password" required)
 
